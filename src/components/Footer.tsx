@@ -66,7 +66,6 @@ const Footer = () => {
             <ul className="space-y-2 text-background/80">
               <li>+506 7209-9038</li>
               <li>info@dentalcarecr.com</li>
-              <li>www.dentalcarecr.com</li>
               <li className="text-sm">Heredia, Santo Domingo<br />200m sur Clínica Hugo Fonseca</li>
             </ul>
           </div>
