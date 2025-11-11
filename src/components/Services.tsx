@@ -1,29 +1,55 @@
-import { Card, CardContent } from "@/components/ui/card";
 import {
-  Smile,
-  Sparkles,
-  Anchor,
-  Activity,
-  Baby,
-  Zap,
-  FileText,
-  Scissors,
-  Fingerprint,
-  Monitor,
-} from "lucide-react";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Services = () => {
-  const services = [
-    { icon: Smile, title: "Odontología General", color: "from-blue-500 to-blue-600" },
-    { icon: Sparkles, title: "Estética Dental y Restaurativa", color: "from-cyan-500 to-cyan-600" },
-    { icon: Anchor, title: "Implantología", color: "from-sky-500 to-sky-600" },
-    { icon: Activity, title: "Periodoncia (encías y hueso)", color: "from-blue-400 to-blue-500" },
-    { icon: Baby, title: "Odontopediatría", color: "from-indigo-500 to-indigo-600" },
-    { icon: Zap, title: "Endodoncia (tratamiento de nervio)", color: "from-violet-500 to-violet-600" },
-    { icon: FileText, title: "Patología Oral", color: "from-blue-600 to-blue-700" },
-    { icon: Scissors, title: "Cirugía Oral y Orofacial", color: "from-cyan-600 to-cyan-700" },
-    { icon: Fingerprint, title: "Ortodoncia", color: "from-sky-600 to-sky-700" },
-    { icon: Monitor, title: "Odontología Digital", color: "from-blue-500 to-blue-600" },
+  const servicesColumn1 = [
+    {
+      title: "Odontología General",
+      description: "Cuidado integral de tu salud bucal con chequeos preventivos, limpiezas dentales, empastes y tratamientos para mantener tu sonrisa saludable."
+    },
+    {
+      title: "Estética Dental y Restaurativa",
+      description: "Mejora la apariencia de tu sonrisa con blanqueamientos, carillas, y restauraciones que combinan belleza y funcionalidad."
+    },
+    {
+      title: "Implantología",
+      description: "Reemplazo permanente de dientes perdidos mediante implantes dentales de última generación para restaurar tu sonrisa completa."
+    },
+    {
+      title: "Periodoncia (encías y hueso)",
+      description: "Tratamiento especializado de enfermedades de las encías y hueso que sostiene los dientes, previniendo la pérdida dental."
+    },
+    {
+      title: "Odontopediatría",
+      description: "Atención dental especializada para niños, creando experiencias positivas desde temprana edad para una salud bucal de por vida."
+    }
+  ];
+
+  const servicesColumn2 = [
+    {
+      title: "Endodoncia (tratamiento de nervio)",
+      description: "Tratamientos de conducto especializados para salvar dientes dañados y eliminar el dolor con técnicas avanzadas."
+    },
+    {
+      title: "Patología Oral",
+      description: "Diagnóstico y tratamiento de enfermedades que afectan la cavidad oral, incluyendo lesiones y anomalías de tejidos blandos."
+    },
+    {
+      title: "Cirugía Oral y Orofacial",
+      description: "Procedimientos quirúrgicos especializados incluyendo extracciones complejas, cirugía de muelas del juicio y correcciones maxilofaciales."
+    },
+    {
+      title: "Ortodoncia",
+      description: "Corrección de la posición de dientes y mandíbula mediante brackets, alineadores invisibles y otros tratamientos ortodónticos."
+    },
+    {
+      title: "Odontología Digital",
+      description: "Tecnología de vanguardia con escaneo 3D, diseño digital de sonrisas y tratamientos asistidos por computadora para resultados precisos."
+    }
   ];
 
   return (
@@ -38,22 +64,38 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              className="border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card"
-            >
-              <CardContent className="p-6 text-center">
-                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${service.color} rounded-full mb-4`}>
-                  <service.icon className="text-white" size={28} />
-                </div>
-                <h3 className="text-base font-semibold text-foreground leading-tight">
-                  {service.title}
-                </h3>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Column 1 */}
+          <div>
+            <Accordion type="single" collapsible className="w-full">
+              {servicesColumn1.map((service, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border-border">
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary transition-colors">
+                    {service.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {service.description}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          {/* Column 2 */}
+          <div>
+            <Accordion type="single" collapsible className="w-full">
+              {servicesColumn2.map((service, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border-border">
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary transition-colors">
+                    {service.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {service.description}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
     </section>
