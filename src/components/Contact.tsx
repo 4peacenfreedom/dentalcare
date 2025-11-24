@@ -17,10 +17,27 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Crear el contenido del email
+    const subject = `Nuevo mensaje de ${formData.nombre}`;
+    const body = `
+Nombre: ${formData.nombre}
+Email: ${formData.email}
+Teléfono: ${formData.telefono}
+
+Mensaje:
+${formData.mensaje}
+    `.trim();
+
+    // Abrir el cliente de correo con la información
+    const mailtoLink = `mailto:info@jysdentalcare.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+
     toast({
-      title: "Mensaje enviado",
-      description: "Nos pondremos en contacto contigo pronto.",
+      title: "Abriendo cliente de correo",
+      description: "Se abrirá tu aplicación de correo para enviar el mensaje.",
     });
+
     setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
   };
 
@@ -34,8 +51,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@dentalcarecr.com",
-      link: "mailto:info@dentalcarecr.com",
+      content: "info@jysdentalcare.com",
+      link: "mailto:info@jysdentalcare.com",
     },
     {
       icon: MapPin,
