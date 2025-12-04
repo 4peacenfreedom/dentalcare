@@ -97,10 +97,10 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:info@jysdentalcare.com"
+                  href="mailto:drasarce@gmail.com"
                   className="hover:text-primary transition-colors duration-300"
                 >
-                  info@jysdentalcare.com
+                  drasarce@gmail.com
                 </a>
               </li>
               <li className="text-sm">Heredia, Santo Domingo<br />200m sur Clínica Hugo Fonseca</li>

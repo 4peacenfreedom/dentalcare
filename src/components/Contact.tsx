@@ -30,7 +30,7 @@ ${formData.mensaje}
     `.trim();
 
     // Abrir el cliente de correo con la información
-    const mailtoLink = `mailto:info@jysdentalcare.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:drasarce@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
 
     toast({
@@ -51,8 +51,8 @@ ${formData.mensaje}
     {
       icon: Mail,
       title: "Email",
-      content: "info@jysdentalcare.com",
-      link: "mailto:info@jysdentalcare.com",
+      content: "drasarce@gmail.com",
+      link: "mailto:drasarce@gmail.com",
     },
     {
       icon: MapPin,

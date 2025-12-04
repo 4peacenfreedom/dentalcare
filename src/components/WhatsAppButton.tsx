@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 const WhatsAppButton = () => {
@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
       className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BA5A] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
       aria-label="Agendar por WhatsApp"
     >
-      <MessageCircle className="text-white" size={28} />
+      <FaWhatsapp className="text-white" size={28} />
     </Button>
   );
 };
